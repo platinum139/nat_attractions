@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_12_164828) do
+ActiveRecord::Schema.define(version: 2019_10_14_101537) do
 
   create_table "attractions", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "country_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "capitals", force: :cascade do |t|
+    t.string "name"
+    t.integer "population"
     t.integer "country_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

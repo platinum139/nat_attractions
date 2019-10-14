@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @capital.name %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @capital.population %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @capital.country_id %>
+</p>
+
+<%= link_to 'Edit', edit_capital_path(@capital) %> |
+<%= link_to 'Back', capitals_path %>
