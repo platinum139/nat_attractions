@@ -14,7 +14,7 @@
       </tr>
       <tr>
         <td scope="row"><strong>Країна</strong></td>
-        <td><%= @attraction.country_id %></td>
+        <td><%= Country.find(@attraction.country_id).name %></td>
       </tr>
   </tbody>
 </table>
