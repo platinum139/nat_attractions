@@ -4,9 +4,18 @@ namespace :db do
   task :populate_heroku => :environment do
 
     require 'faker'
-    ActiveRecord::Base.connection.truncate(:attractions)
-    ActiveRecord::Base.connection.truncate(:capitals)
-    ActiveRecord::Base.connection.truncate(:countries)
+
+    Attraction.delete_all
+    Capital.delete_all
+    Country.delete_all
+    
+    ActiveRecord::Base.connection.reset_pk_sequence!('attractions')
+    ActiveRecord::Base.connection.reset_pk_sequence!('capitals')
+    ActiveRecord::Base.connection.reset_pk_sequence!('countries')
+
+    #ActiveRecord::Base.connection.truncate(:attractions)
+    #ActiveRecord::Base.connection.truncate(:capitals)
+    #ActiveRecord::Base.connection.truncate(:countries)
 
     10.times do
       country = Country.create ({
