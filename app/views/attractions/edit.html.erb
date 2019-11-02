@@ -1,6 +1,9 @@
-<h1>Editing Attraction</h1>
+<h1>Редагування пам'ятки природи</h1>
 
-<%= render 'form', attraction: @attraction %>
-
-<%= link_to 'Show', @attraction %> |
-<%= link_to 'Back', attractions_path %>
+<div class="form_container">
+  <%= render 'form', attraction: @attraction %>
+  <div class="ref_container">
+    <%= link_to 'Детальніше', @attraction %> |
+    <%= link_to 'Назад', attractions_path %>
+  </div>
+</div>

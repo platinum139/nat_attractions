@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @attraction.name %>
-</p>
+<h1><%= @attraction.name %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @attraction.description %>
-</p>
+<table class="table table-bordered table-hover">
+  <tbody>
+      <tr>
+        <td scope="row"><strong>Назва</strong></td>
+        <td><%= @attraction.name %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Опис</strong></td>
+        <td><%= @attraction.description %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Країна</strong></td>
+        <td><%= @attraction.country_id %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Country:</strong>
-  <%= @attraction.country_id %>
-</p>
-
-<%= link_to 'Edit', edit_attraction_path(@attraction) %> |
-<%= link_to 'Back', attractions_path %>
+<p><%= link_to 'Редагувати', edit_attraction_path(@attraction) %></p>
+<p><%= link_to 'Видалити', @attraction, method: :delete, data: { confirm: 'Ви впевнені?' } %></p>
+<p><%= link_to 'Назад', attractions_path %></p>

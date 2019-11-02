@@ -1,0 +1,106 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.navbar
+{
+	margin-bottom: 0 !important;
+}
+
+.navbar-default
+{
+  /* колір пунктів меню навігації */
+  .navbar-nav > li > a
+  {
+      color: #212121 !important;
+    	font-size: 15px;
+      font-weight: bold;
+  }
+  /* колір пунктів меню навігації при наведенні курсора */
+  .navbar-nav > li > a:hover
+  {
+      color: grey !important;
+  }
+  /* колір рамки кнопки, яка відкриває меню */
+  .navbar-toggle
+  {
+      border-color: brown !important;
+  }
+  /* колір полосок кнопки, яка відкриває меню */
+  .navbar-toggle .icon-bar
+  {
+      background-color: brown !important;
+  }
+}
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.form_container {
+	width: 80%;
+	height: auto;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.my_form {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.btn {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.form-control {
+	margin-bottom: 3%;
+}
+
+.ref_container {
+	text-align: center;
+}

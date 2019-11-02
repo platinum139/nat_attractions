@@ -1,28 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Countries</h1>
+<h1>Країни</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Language</th>
-      <th>Currency</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col">Назва</th>
+      <th scope="col">Місцезнаходження</th>
+      <th scope="col">Мова</th>
+      <th scope="col">Валюта</th>
+      <th colspan="8"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @countries.each do |country| %>
+    <% @countries.each_with_index do |country, index| %>
       <tr>
+        <th scope="row"><%= index+1 %></th>
         <td><%= country.name %></td>
         <td><%= country.location %></td>
         <td><%= country.language %></td>
         <td><%= country.currency %></td>
-        <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_country_path(country) %></td>
-        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Детальніше', country %></td>
+        <td><%= link_to 'Редагувати', edit_country_path(country) %></td>
+        <td><%= link_to 'Видалити', country, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+<%= link_to 'Додати країну', new_country_path %>

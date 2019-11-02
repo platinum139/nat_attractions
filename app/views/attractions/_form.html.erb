@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="row">
+    <div class="col-md-4 my_form">
+      <%= form_for(@attraction) do |form| %>
+        <%= form.label "Назва" %>
+        <%= form.text_field :name, class: "form-control" %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+        <%= form.label "Опис" %>
+        <%= form.text_area :description, class: "form-control" %>
 
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.number_field :country_id %>
-  </div>
+        <%= form.label "Країна" %>
+        <%= form.number_field :country_id, class: "form-control" %>
 
-  <div class="actions">
-    <%= form.submit %>
+        <%= form.submit "ОК", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 <% end %>

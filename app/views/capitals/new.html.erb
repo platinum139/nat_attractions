@@ -1,5 +1,8 @@
-<h1>New Capital</h1>
+<h1>Нова столиця</h1>
 
-<%= render 'form', capital: @capital %>
-
-<%= link_to 'Back', capitals_path %>
+<div class="form_container">
+  <%= render 'form', capital: @capital %>
+  <div class="ref_container">
+    <%= link_to 'Назад', capitals_path %>
+  </div>
+</div>

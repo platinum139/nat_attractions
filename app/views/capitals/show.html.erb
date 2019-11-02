@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @capital.name %>
-</p>
+<h1><%= @capital.name %></h1>
 
-<p>
-  <strong>Population:</strong>
-  <%= @capital.population %>
-</p>
+<table class="table table-bordered table-hover">
+  <tbody>
+      <tr>
+        <td scope="row"><strong>Назва</strong></td>
+        <td><%= @capital.name %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Населення</strong></td>
+        <td><%= @capital.population %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Країна</strong></td>
+        <td><%= @capital.country_id %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Country:</strong>
-  <%= @capital.country_id %>
-</p>
-
-<%= link_to 'Edit', edit_capital_path(@capital) %> |
-<%= link_to 'Back', capitals_path %>
+<p><%= link_to 'Редагувати', edit_capital_path(@capital) %></p>
+<p><%= link_to 'Видалити', @capital, method: :delete, data: { confirm: 'Ви впевнені?' } %></p>
+<p><%= link_to 'Назад', capitals_path %></p>

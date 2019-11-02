@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   resources :attractions
   resources :countries
 
-  root 'countries#index'
+  root             'attractions#index'
+  get 'attractions'    => 'attractions#index'
+  get 'countries'   => 'countries#index'
+  get 'capitals' => 'capitals#index'
 end

@@ -11,27 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="row">
+    <div class="col-md-4 my_form">
+      <%= form_for(@country) do |form| %>
+        <%= form.label "Назва" %>
+        <%= form.text_field :name, class: "form-control" %>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+        <%= form.label "Місцезнаходження" %>
+        <%= form.text_field :location, class: "form-control" %>
 
-  <div class="field">
-    <%= form.label :language %>
-    <%= form.text_field :language %>
-  </div>
+        <%= form.label "Мова" %>
+        <%= form.text_field :language, class: "form-control" %>
 
-  <div class="field">
-    <%= form.label :currency %>
-    <%= form.text_field :currency %>
-  </div>
+        <%= form.label "Валюта" %>
+        <%= form.text_field :currency, class: "form-control" %>
 
-  <div class="actions">
-    <%= form.submit %>
+        <%= form.submit "ОК", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 <% end %>

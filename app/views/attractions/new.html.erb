@@ -1,5 +1,8 @@
-<h1>New Attraction</h1>
+<h1>Нова пам'ятка природи</h1>
 
-<%= render 'form', attraction: @attraction %>
-
-<%= link_to 'Back', attractions_path %>
+<div class="form_container">
+  <%= render 'form', attraction: @attraction %>
+  <div class="ref_container">
+    <%= link_to 'Назад', attractions_path %>
+  </div>
+</div>

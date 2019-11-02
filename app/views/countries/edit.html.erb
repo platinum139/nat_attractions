@@ -1,6 +1,9 @@
-<h1>Editing Country</h1>
+<h1>Редагування країни</h1>
 
-<%= render 'form', country: @country %>
-
-<%= link_to 'Show', @country %> |
-<%= link_to 'Back', countries_path %>
+<div class="form_container">
+  <%= render 'form', country: @country %>
+  <div class="ref_container">
+    <%= link_to 'Детальніше', @country %> |
+    <%= link_to 'Назад', countries_path %>
+  </div>
+</div>

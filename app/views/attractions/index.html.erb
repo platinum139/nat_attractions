@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Attractions</h1>
+<h1>Пам'ятки природи</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Country</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col">Назва</th>
+      <th scope="col">Опис</th>
+      <th scope="col">Країна</th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @attractions.each do |attraction| %>
+    <% @attractions.each_with_index do |attraction, index| %>
       <tr>
+        <th scope="row"><%= index+1 %></th>
         <td><%= attraction.name %></td>
         <td><%= attraction.description %></td>
-        <td><%= attraction.country_id %></td>
-        <td><%= link_to 'Show', attraction %></td>
-        <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-        <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Country.find(attraction.country_id).name %></td>
+        <td><%= link_to 'Детальніше', attraction %></td>
+        <td><%= link_to 'Редагувати', edit_attraction_path(attraction) %></td>
+        <td><%= link_to 'Видалити', attraction, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Attraction', new_attraction_path %>
+<%= link_to 'Додати нову пам\'ятку природи', new_attraction_path %>

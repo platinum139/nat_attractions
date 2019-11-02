@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @country.name %>
-</p>
+<h1><%= @country.name %></h1>
 
-<p>
-  <strong>Location:</strong>
-  <%= @country.location %>
-</p>
+<table class="table table-bordered table-hover">
+  <tbody>
+      <tr>
+        <td scope="row"><strong>Назва</strong></td>
+        <td><%= @country.name %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Місцезнаходження</strong></td>
+        <td><%= @country.location %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Мова</strong></td>
+        <td><%= @country.language %></td>
+      </tr>
+      <tr>
+        <td scope="row"><strong>Валюта</strong></td>
+        <td><%= @country.currency %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Language:</strong>
-  <%= @country.language %>
-</p>
-
-<p>
-  <strong>Currency:</strong>
-  <%= @country.currency %>
-</p>
-
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>
+<p><%= link_to 'Редагувати', edit_country_path(@country) %></p>
+<p><%= link_to 'Видалити', @country, method: :delete, data: { confirm: 'Ви впевнені?' } %></p>
+<p><%= link_to 'Назад', countries_path %></p>
