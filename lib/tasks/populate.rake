@@ -3,32 +3,30 @@ namespace :db do
 
   task :populate => :environment do
 
+    require 'populator'
     require 'faker'
-    Rake::Task['db:reset'].invoke
 
-    10.times do
-      country = Country.create ({
-        :name => Faker::Address.country,
-        :location => Faker::Address.country_code,
-        :language => Faker::Nation.language,
-        :currency => Faker::Currency.name })
-      country.save!
-    end
+    Attraction.delete_all
+    Capital.delete_all
+    Country.delete_all
+    
+    Country.populate(3) do |country|
+      country.name = Faker::Address.country
+      country.location = Faker::Address.country_code
+      country.language = Faker::Nation.language
+      country.currency = Faker::Currency.name
 
-    10.times do
-      capital = Capital.create! ({
-        :name => Faker::Address.city,
-        :population => Faker::Number.between(from: 100000, to: 10000000),
-        :country_id => Faker::Number.between(from: 1, to: 10) })
-      capital.save!
-    end
+      Capital.populate(1) do |capital|
+        capital.name = Faker::Address.city
+        capital.population = Faker::Number.between(from: 100000, to: 10000000)
+        capital.country_id = country.id
+      end
 
-    10.times do
-      attraction = Attraction.create! ({
-        :name => Faker::Restaurant.name,
-        :description => Faker::Restaurant.description,
-        :country_id => Faker::Number.between(from: 1, to: 10) })
-      attraction.save!
+      Attraction.populate(2) do |attraction|
+        attraction.name = Faker::Restaurant.name
+        attraction.description = Faker::Restaurant.description
+        attraction.country_id = country.id
+      end
     end
   end
 end

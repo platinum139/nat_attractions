@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'rails', '~> 6.0.0'
+gem 'populator', :github => 'fulvi0/populator'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'puma', '~> 3.11'

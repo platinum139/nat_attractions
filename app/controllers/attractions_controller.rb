@@ -19,6 +19,7 @@ class AttractionsController < ApplicationController
 
   # GET /attractions/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /attractions

@@ -19,6 +19,7 @@ class CapitalsController < ApplicationController
 
   # GET /capitals/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /capitals

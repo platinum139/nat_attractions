@@ -19,7 +19,7 @@
         <th scope="row"><%= index+1 %></th>
         <td><%= capital.name %></td>
         <td><%= capital.population %></td>
-        <td><%= Country.find(capital.country_id).name %></td>
+        <td><%= capital.country.name %></td>
         <td><%= link_to 'Детальніше', capital %></td>
         <td><%= link_to 'Редагувати', edit_capital_path(capital) %></td>
         <td><%= link_to 'Видалити', capital, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>

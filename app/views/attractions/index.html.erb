@@ -19,7 +19,7 @@
         <th scope="row"><%= index+1 %></th>
         <td><%= attraction.name %></td>
         <td><%= attraction.description %></td>
-        <td><%= Country.find(attraction.country_id).name %></td>
+        <td><%= attraction.country.name %></td>
         <td><%= link_to 'Детальніше', attraction %></td>
         <td><%= link_to 'Редагувати', edit_attraction_path(attraction) %></td>
         <td><%= link_to 'Видалити', attraction, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
