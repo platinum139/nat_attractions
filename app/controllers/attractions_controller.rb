@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
 
   # GET /attractions

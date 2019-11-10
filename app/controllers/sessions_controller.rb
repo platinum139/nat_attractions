@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to attractions_path
+      #redirect_to attractions_path
+      redirect_back_or attractions_path
     else
       flash.now[:danger] = "Невірний email або пароль!"
       render 'new'

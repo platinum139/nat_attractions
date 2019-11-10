@@ -1,4 +1,5 @@
 class CapitalsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_capital, only: [:show, :edit, :update, :destroy]
 
   # GET /capitals
