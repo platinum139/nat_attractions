@@ -1,0 +1,18 @@
+
+  <div class="row">
+    <div class="col-md-4 my_form">
+      <%= form_for(:session, url: login_path) do |form| %>
+
+        <%= form.label "Введіть Email" %>
+        <%= form.email_field :email, class: "form-control" %>
+
+        <%= form.label "Введіть пароль" %>
+        <%= form.password_field :password, class: "form-control" %>
+
+        <%= form.submit "ОК", class: "btn btn-primary" %>
+      <% end %>
+
+      <br>
+      <p>Вперше на нашому сайті?   <%= link_to "Зареєструватися", signup_path %></p>
+    </div>
+  </div>
