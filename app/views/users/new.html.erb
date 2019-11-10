@@ -1,4 +1,9 @@
 <% provide(:title, "Зареєструватися") %>
 <h1>Зареєструватися</h1>
 
-<p>ФОрма реєстрації</p>
+<div class="form_container">
+  <%= render 'form', user: @user %>
+  <div class="ref_container">
+    <%= link_to 'Назад', attractions_path %>
+  </div>
+</div>

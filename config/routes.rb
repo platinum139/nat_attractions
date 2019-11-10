@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :capitals
   resources :attractions
   resources :countries
+  resources :users
 
   root             'attractions#index'
   get 'attractions'    => 'attractions#index'
