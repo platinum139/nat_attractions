@@ -8,7 +8,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'populator', :github => 'fulvi0/populator'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'bootstrap-sass', '~> 3.2.0.0'
-gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
@@ -39,6 +38,7 @@ end
 group :production do
   gem 'pg',             '0.18.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'puma', '~> 3.11'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
