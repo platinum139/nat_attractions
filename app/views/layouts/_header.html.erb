@@ -4,10 +4,16 @@
     <div class="col-md-7">
       <div class="collapse navbar-collapse" id="site-nav">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Пам'ятки природи", attractions_path %></li>
-          <li><%= link_to "Країни", countries_path %></li>
-          <li><%= link_to "Столиці", capitals_path %></li>
-          <li><%= link_to "Зареєструватися", signup_path %></li>
+
+          <% if logged_in? %>
+            <li><%= link_to "Пам'ятки природи", attractions_path %></li>
+            <li><%= link_to "Країни", countries_path %></li>
+            <li><%= link_to "Столиці", capitals_path %></li>
+            <li><%= link_to "Вийти", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Зареєструватися", signup_path %></li>
+            <li><%= link_to "Увійти", login_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
